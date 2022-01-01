@@ -1,30 +1,33 @@
-#include<bits/stdc++.h>
-using namespace std;
-typedef long long ll;
-
-vector<string> ans,ansRev;
-std::map<string,vector<string>> v,revV;
-map<string,int> visited;
-
-
-// Time Complexicity: O(n+e)
-void solve()
-{
-  
+class Solution{
+  public:
+    vector<vector<string> > Anagrams(vector<string>& string_list) {
+        vector<vector<string> > result;
     
-}
-
-
-int main()
-{
-#ifndef ONLINE_JUDGE
-  freopen("inp.txt" , "r" , stdin);
-  freopen("op3.txt" , "w" , stdout);
-#endif
-  int t = 1;
-  cin>>t;
-  while (t--) {
-    solve();
-  }
-  return 0;
-}
+        // hash map to maintain groups of anagrams
+        unordered_map <string,vector<string> >p; 
+        
+        
+        for(int i =0; i<string_list.size(); i++ )
+        {
+            string s = string_list[i];
+         
+            // sort each string
+            sort(s.begin(),s.end());
+            
+            // add original string to corresponding sorted string in hash map
+            p[s].push_back(string_list[i]);
+        }
+      
+      for(auto i:p){
+          result.push_back(i.second);
+      }
+       for(int i=0;i<p.size();i++){
+          result.push_back(i.second);
+      }
+      
+        // for(auto itr= p.begin(); itr!=p.end(); itr++)
+        //     result.push_back(itr->second);
+        
+        return result;
+    }
+};
