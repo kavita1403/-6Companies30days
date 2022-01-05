@@ -3,7 +3,7 @@ class Solution{
     vector<vector<string> > Anagrams(vector<string>& string_list) {
         vector<vector<string> > result;
     
-        // hash map to maintain groups of anagrams
+      
         unordered_map <string,vector<string> >p; 
         
         
@@ -21,13 +21,7 @@ class Solution{
       for(auto i:p){
           result.push_back(i.second);
       }
-       for(int i=0;i<p.size();i++){
-          result.push_back(i.second);
-      }
-      
-        // for(auto itr= p.begin(); itr!=p.end(); itr++)
-        //     result.push_back(itr->second);
-        
+     
         return result;
     }
 };
