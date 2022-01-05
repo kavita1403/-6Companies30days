@@ -1,1 +1,16 @@
-
+ull getNthUglyNo(int n) {
+	   vector<ull> vt(1,1);
+	   for(int x=0,y=0,z=0;vt.size()!=n;)
+	   {
+	      ull val=min(min(vt[x]*2,vt[y]*3),vt[z]*5);
+	      vt.push_back(val);
+	      if(vt.back()==vt[x]*2)
+	        x++;
+	      if(vt.back()==vt[y]*3)
+	        y++;
+	      if(vt.back()==vt[z]*5)
+	        z++;
+	   }
+	   return vt.back();
+	}
+};
