@@ -1,3 +1,5 @@
+Q Link: https://practice.geeksforgeeks.org/problems/maximum-of-all-subarrays-of-size-k3101/1
+
 class Solution {
   public:
     vector<int> max_of_subarrays(vector<int> nums, int n, int k) {
