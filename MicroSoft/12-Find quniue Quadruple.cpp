@@ -1,6 +1,6 @@
 Q Link: https://practice.geeksforgeeks.org/problems/find-all-four-sum-numbers1732/1#
 Solution- 
-  #Method-1:
+  Method-1:
    
   class Solution{
     public:
@@ -43,7 +43,7 @@ Solution-
 
 
 
-#Method-2
+Method-2
   
   class Solution{
     public:
