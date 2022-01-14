@@ -1,5 +1,49 @@
 Q Link: https://practice.geeksforgeeks.org/problems/find-all-four-sum-numbers1732/1#
 Solution- 
+  #Method-1:
+   
+  class Solution{
+    public:
+   // 4 3 3 4 4 2 1 2 1 1=> 1 1 3 4 | 1 2 2 4| 1 2 3 3 
+   // 1 1 3 4 5 6  7 (k=12)
+    vector<vector<int> > fourSum(vector<int> &a, int rsum) {
+          sort(a.begin(),a.end());
+        int n=a.size();
+        set<vector<int>> st;
+        vector<vector<int>> vt;
+        for(int i=0;i<n-3;i++)
+        {
+        for(int j=i+1;j<n-2;j++)
+        {
+        int k=j+1;
+        int l=n-1;
+        while(k<l)
+        {
+            int sum=a[i]+a[j]+a[k]+a[l];
+            if(sum==rsum)
+            {
+                vector<int> vs{a[i],a[j],a[k],a[l]};
+                st.insert(vs);
+                l--;
+            }
+            else if(sum<rsum)
+            {
+                k++;
+            }
+            else l--;
+        }
+        }
+        }
+        for(auto x:st)
+        vt.push_back(x);
+        return vt;
+    }
+};
+
+
+
+
+#Method-2
   
   class Solution{
     public:
